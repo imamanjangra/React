@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Bg_changer from './bg_color'
-import Password_generator from './password'
+import Passwordg from './password'
 
 function App() {
   
@@ -11,7 +11,7 @@ function App() {
     <>
     <div className="w-full h-screen" style={{ backgroundColor: Color }}>
       <Bg_changer setColor = {setColor} />
-      <Password_generator/> 
+      <Passwordg/> 
     </div>
     
     </>

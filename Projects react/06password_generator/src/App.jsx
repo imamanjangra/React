@@ -2,13 +2,13 @@ import { useState , useCallback , useEffect, useRef } from 'react'
 
 
 function App() {
-  const [length , setlength] = useState(8);
-  const  [no_allowed , setno_allowed] = useState("fasle");
-  const [char_allowed , setchar_allowed] = useState("false");
+  const [length , setlength] = useCallback(8);
+  const  [no_allowed , setno_allowed] = useState(false);
+  const [char_allowed , setchar_allowed] = useState(false);
   const [Password , setpassword] = useState("");
   let Password_ref = useRef("");
 
-  const PasswordGeneration = useCallback(()=>{
+  const PasswordGeneration = useEffect(()=>{
     let pass = "";
     let str = "ABCDEFGHIGKLMNOPQRSTUVWXVZabcdefghigklmnopqrstuvwxyz";
     if(no_allowed){
@@ -24,7 +24,7 @@ function App() {
     }
     setpassword(pass);
   } , [
-    length , no_allowed , char_allowed , setpassword
+    length , no_allowed , char_allowed 
   ])
 
   const copytoclip = useCallback(()=>{
