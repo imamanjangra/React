@@ -21,16 +21,18 @@ function App(){
       setconverted(amount)
       setAmount(converted)
     }
+    
 
     const convert = () =>{
       setconverted(amount * useCurrency[to])
     }
+    console.log(` to = ${to} , from = ${from}`)
 
  return (
         <div
             className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
             style={{
-                backgroundImage: `url('${'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eDfALfTMs9ucn9VSaJOAScgxlJkFRnW2yg&s'}')`,
+               backgroundColor : "#454545"
             }}
         >
             <div className="w-full">
@@ -42,16 +44,19 @@ function App(){
                         }}
                     >
                         <div className="w-full mb-1">
+
                             <InputBox
                                 label="From"
                                 amount={amount}
                                 currencyOption={option}
                                 onCurrencyChange={(currency)=>
-                                  setAmount(amount)}
+                                  setAmount(currency)}
+                                  
                                   selectedCurrency={from}
                                   onAmountChange={(amount) => 
                                     setAmount(amount)
                                   }
+                                 
                             />
                         </div>
                         <div className="relative w-full h-0.5">
@@ -66,13 +71,13 @@ function App(){
                         <div className="w-full mt-1 mb-4">
                             <InputBox
                                 label="TO"
-                                amount={convert}
+                                amount={converted}
                                 currencyOption={option}
                                 onCurrencyChange={(currency) =>
                                   setTo(currency)
                                 
                                 }
-                                  selectedCurrency={from}
+                                  selectedCurrency={to}
                                  amountDisable
                             />
                         </div>
