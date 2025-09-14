@@ -9,7 +9,7 @@ import Layout from './Layout'
 
 import Contact from './Components/Contact/Contact'
 import User from './Components/user/User'
-import Github from './Components/Github/Github'
+import Github, { gitdata } from './Components/Github/Github'
 
 
 // const router = createBrowserRouter([
@@ -36,7 +36,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='user/:userid' element={<User/>} />
-      <Route path='/github' element={<Github/>} />
+      <Route loader={gitdata} path='/github' element={<Github/>} />
     </Route>
   )
 );
