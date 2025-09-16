@@ -1,4 +1,27 @@
+import { useState , useEffect } from "react";
+
+let imgages = [
+    "https://i.ibb.co/bjyDbzgD/4e6443b2-867f-4733-9da5-b2186504ba0e.jpg",
+    "https://i.ibb.co/gFBXh166/9fbb8767-3cce-4ca2-883c-799aaad6043d.jpg",
+    "https://i.ibb.co/cm3GC05/645efffc-5348-4056-8b12-12db871e927f.jpg"
+  ]
 function Home() {
+ 
+   const [imgchage, setimgchage] = useState(imgages[0]);
+
+  useEffect(() => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % imgages.length; // move index forward
+      setimgchage(imgages[index]); // update state
+      console.log("Showing:", imgages[index]);
+    }, 10000);
+
+    return () => clearInterval(interval); // cleanup
+  }, []);
+
+  
   return (
     <>
       <div className="min-h-screen bg-[#181818] flex flex-col md:flex-row justify-center md:justify-evenly items-center md:items-start px-4 sm:px-6 md:px-10 py-6 md:py-10 gap-8">
@@ -15,16 +38,45 @@ function Home() {
 
       
           <div className="flex md:mt-10 flex-row md:flex-col gap-4 md:gap-5 justify-center items-center h-auto md:h-80 w-auto md:w-20 border md:border border-white/20 bg-white/5 backdrop-blur-md rounded-2xl shadow-md px-4 md:px-0 py-2 md:py-0">
-            <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition"></div>
-            <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition"></div>
-            <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition"></div>
-            <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition"></div>
+                <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-12 hover:bg-white/20 transition">
+                    <img
+                    src="https://i.ibb.co/QjnDyWMP/Air-joden-blue-removebg-preview.png"
+                    className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                    alt="Product"
+                  />
+                </div>
+
+                <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition">
+                    <img
+                    src="https://i.ibb.co/pB3m4wS2/air-joden-1-removebg-preview.png"
+                    className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                    alt="Product"
+                  />
+                </div>
+
+                <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition">
+                    <img
+                    src="https://i.ibb.co/DDTvzRYh/air-j-removebg-preview.png"
+                    className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                    alt="Product"
+                  />
+                </div>
+
+                <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition">
+                    <img
+                    src="https://i.ibb.co/gFj9yDn0/air-p-removebg-preview.png"
+                    className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                    alt="Product"
+                  />
+              </div>
+           
+            
           </div>
         </div>
 
         <div className="relative h-[250px] sm:h-[350px] md:h-[500px] w-full sm:w-[400px] md:w-[700px] rounded-2xl overflow-hidden shadow-xl group mt-6 md:mt-0">
           <img
-            src="https://i.ibb.co/bjyDbzgD/4e6443b2-867f-4733-9da5-b2186504ba0e.jpg"
+            src={imgchage}
             className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
             alt="Product"
           />
@@ -46,3 +98,4 @@ function Home() {
 }
 
 export default Home;
+
