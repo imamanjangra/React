@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import Card from "../Home/Card"
 
 let imgages = [
     "https://i.ibb.co/bjyDbzgD/4e6443b2-867f-4733-9da5-b2186504ba0e.jpg",
@@ -24,7 +25,7 @@ function Home() {
   
   return (
     <>
-      <div className="min-h-screen bg-[#181818] flex flex-col md:flex-row justify-center md:justify-evenly items-center md:items-start px-4 sm:px-6 md:px-10 py-6 md:py-10 gap-8">
+      <div className="min-h-screen bg-[#181818] flex flex-col md:flex-row justify-center md:justify-evenly items-center md:items-start px-4 sm:px-6 md:px-10 py-6 md:pt-10 gap-8">
        
         <div className="flex flex-row md:flex-col justify-center items-center w-full md:w-auto gap-6 md:gap-0">
          
@@ -93,6 +94,9 @@ function Home() {
         </div>
       </div>
       
+      <div className="flex justify-center items-center text-2xl text-white font-bold ">
+        <p>Wear Strength. Wear Style.</p>
+      </div>
     </>
   );
 }
