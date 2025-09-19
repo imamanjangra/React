@@ -1,4 +1,4 @@
-function Card() {
+function Kids() {
   const shoes = [
     {
       id: 1,
@@ -18,25 +18,13 @@ function Card() {
       price: "₹7000",
       img: "https://i.ibb.co/gFj9yDn0/air-p-removebg-preview.png",
     },
-     {
-      id: 4,
-      s_name: "Air Joden 1",
-      price: "₹9000",
-      img: "https://i.ibb.co/pB3m4wS2/air-joden-1-removebg-preview.png",
-    },
-     {
-      id: 5,
-      s_name: "shose",
-      price: "₹9000",
-      img: "https://i.ibb.co/DDTvzRYh/air-j-removebg-preview.png",
-    },
   ];
 
   return (
     <>
-      <div className="bg-[#181818] min-h-screen p-10">
-        <h1 className="text-3xl font-bold mb-8 text-white">
-          Top selling 
+      <div className="bg-[#121212] min-h-screen p-10">
+        <h1 className="text-3xl font-bold text-center mb-8 text-white">
+          Kids Shoes
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -63,4 +51,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default Kids;
