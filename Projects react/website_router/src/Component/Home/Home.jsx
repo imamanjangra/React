@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import Card from "../Home/Card"
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 let imgages = [
     "https://i.ibb.co/bjyDbzgD/4e6443b2-867f-4733-9da5-b2186504ba0e.jpg",
@@ -26,7 +26,7 @@ function Home() {
   
   return (
     <>
-      <div className="min-h-screen bg-[#181818] flex flex-col md:flex-row justify-center md:justify-evenly items-center md:items-start px-4 sm:px-6 md:px-10 py-6 md:pt-10 gap-8">
+      <div className="md:min-h-screen bg-[#181818] flex flex-col md:flex-row mt-10 md:justify-evenly items-center md:items-start px-4 sm:px-6 md:px-10 py-6 md:pt-10 gap-8">
        
         <div className="flex flex-row md:flex-col justify-center items-center w-full md:w-auto gap-6 md:gap-0">
          
@@ -40,16 +40,17 @@ function Home() {
 
       
           <div className="flex md:mt-10 flex-row md:flex-col gap-4 md:gap-5 justify-center items-center h-auto md:h-80 w-auto md:w-20 border md:border border-white/20 bg-white/5 backdrop-blur-md rounded-2xl shadow-md px-4 md:px-0 py-2 md:py-0">
+          <Link to="https://www.nike.com/in/">
                 <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-12 hover:bg-white/20 transition">
-                  <NavLink to="https://www.nike.com/in/">
+                  
                     <img
                     src="https://i.ibb.co/QjnDyWMP/Air-joden-blue-removebg-preview.png"
                     className="h-full w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                     alt="Product"
                   />
-                  </NavLink>
+                 
                 </div>
-
+            </Link>
                 <div className="border border-white/20 bg-white/10 rounded-2xl h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 hover:bg-white/20 transition">
                     <img
                     src="https://i.ibb.co/pB3m4wS2/air-joden-1-removebg-preview.png"
@@ -97,9 +98,8 @@ function Home() {
         </div>
       </div>
       
-      <div className="flex flex-row justify-center items-center text-2xl md:text-3xl text-white  -mt-20 ">
+      <div className="flex flex-row justify-center items-center mt-5 text-2xl md:text-3xl text-white  md:-mt-20 ">
         <p className="font-bold">Wear Strength. Wear Style.</p>
-        
       </div>
       <div>
           <Card/>
