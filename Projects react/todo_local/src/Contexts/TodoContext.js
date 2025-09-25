@@ -1,24 +1,22 @@
-import { createContext , useContext } from "react";// This is same for all context 
+import {createContext, useContext} from "react"
 
-
-export const TodoContext  = createContext({// This line is also same 
-    todos : [
+export const TodoContext = createContext({
+    todos: [
         {
-            id : 1,
-            todo : "Todo msg",              // first values of context 
-            Compeleted : false,
+            id: 1,
+            todo: " Todo msg",
+            completed: false,
         }
     ],
-
-    addTodo : (todo) => {},
-    updateTodo : (id , todo) => {},                  // second methodes and what they want 
-    deleteTodo : (id) => {},
-    toggleComplete : (id) => {},
+    addTodo: (todo) => {},
+    updateTodo: (id, todo) => {},
+    deleteTodo: (id) => {},
+    toggleComplete: (id) => {}
 })
 
 
 export const useTodo = () => {
-    return useContext(TodoContext)              // THis syntex is same for all 
+    return useContext(TodoContext)
 }
 
-export const TodoProvider = TodoContext.Provider     // Same for all context 
+export const TodoProvider = TodoContext.Provider
