@@ -1,13 +1,24 @@
 import { useState } from 'react'
 
 import './App.css'
+import Addtask from './Components/Addtask'
+import ListTodo from './Components/listTodo'
 
 function App() {
  
 
   return (
     <>
-     <h1 className='bg-red-400'>hello</h1>
+     <div className='bg-[#b2cbf2] w-full h-screen'>
+        <div className='flex justify-center items-center'>
+        <Addtask/>
+        </div>
+
+        <div>
+        <ListTodo/>
+        
+        </div>
+     </div>
     </>
   )
 }
