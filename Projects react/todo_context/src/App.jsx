@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 import Addtask from './Components/Addtask'
@@ -25,6 +25,14 @@ function App() {
     setTodos((prev) => ((prev.map((prevTodo) => (prevTodo.id == id ? {...prevTodo , Compeleted:!prevTodo.Compeleted} : prevTodo)))))
   }
  
+  useEffect(() => {
+    const Todos = JSON.parse(localStorage.getItem("Todos")) || []
+    setTodos(Todos)
+  } , [])
+
+  useEffect(() => {
+    localStorage.setItem("Todos" , JSON.stringify(Todos))
+  } , [Todos])
 
   return (
     <TodoProvider value={{Todos , addTodo , EditTodo , deleteTodo , statusTodo}}> 
