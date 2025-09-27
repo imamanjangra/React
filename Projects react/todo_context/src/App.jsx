@@ -26,13 +26,17 @@ function App() {
   }
  
   useEffect(() => {
-    const Todos = JSON.parse(localStorage.getItem("Todos")) || []
-    setTodos(Todos)
-  } , [])
+  const todos = JSON.parse(localStorage.getItem("Todos"))
+  if (todos && todos.length > 0) {   // ✅ check localStorage value
+    setTodos(todos)                  // ✅ set state from localStorage
+  }
+}, [])
 
-  useEffect(() => {
-    localStorage.setItem("Todos" , JSON.stringify(Todos))
-  } , [Todos])
+useEffect(() => {
+  localStorage.setItem("Todos", JSON.stringify(Todos))
+}, [Todos])
+
+  
 
   return (
     <TodoProvider value={{Todos , addTodo , EditTodo , deleteTodo , statusTodo}}> 
