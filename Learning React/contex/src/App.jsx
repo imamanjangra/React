@@ -2,28 +2,10 @@ import TodoForm from './Components/TodoForm'
 import TodoItems from './Components/TodoItems'
 import ThemeBtn from './Components/ThemeBtn'
 import { ThemeProvider } from './Contexts/ThemeContext'
-import { useEffect, useState } from 'react'
 
 function App() {
-
-  const [Theme , SetTheme] = useState("light")
-
-  useEffect(() => {
-    if(Theme === "dark"){
-      document.documentElement.classList.add("dark");
-    }
-    else{
-      document.documentElement.classList.remove("dark")
-    }
-  } , [Theme])
-
-  const toggleTheme = () => {
-    SetTheme((prev) => (prev === "light" ? "dark" : "light"));
-  }
-
-
   return (
-    <ThemeProvider value={{Theme , toggleTheme}}>
+    <ThemeProvider>
       <div className="min-h-screen flex justify-center items-center 
                       bg-gradient-to-r from-blue-50 via-white to-blue-50 
                       dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
@@ -32,7 +14,7 @@ function App() {
                         rounded-xl shadow-lg w-full max-w-2xl p-8 
                         flex flex-col gap-6 bg-white dark:bg-gray-800 
                         text-gray-900 dark:text-gray-100">
-          
+
           <ThemeBtn />
           <TodoForm />
 
@@ -45,4 +27,4 @@ function App() {
   )
 }
 
-export default App 
+export default App;
