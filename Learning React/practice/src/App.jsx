@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   const [value, setValue] = useState("")
   const [tasks, setTasks] = useState([])
-
+  const [filter , steFilter] = useState("All")
 
   const clearAll = () => {
     setTasks([])
@@ -60,6 +60,12 @@ function App() {
     setTasks(newtaske)
   }
 
+ const filtered =  tasks.filter((task) => {
+    if(filter == "All") return true
+    if(filter == "Completed") return task.completed
+    if(filter == "Pending") return !task.completed
+    return true
+  })
   // const Alltask = () => setTasks(tasks)
   
 
@@ -95,23 +101,25 @@ function App() {
       <div className="flex gap-4">
         <button 
         className="h-10 px-5 rounded-2xl bg-blue-500 hover:bg-blue-400 text-white font-medium shadow"
-        
+        onClick={() => steFilter("All")}
         >
           All
         </button>
         <button className="h-10 px-5 rounded-2xl bg-green-500 hover:bg-green-400 text-white font-medium shadow"
-       
+        onClick={() => steFilter("Completed")}
         >
           Completed
         </button>
-        <button className="h-10 px-5 rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-white font-medium shadow">
+        <button className="h-10 px-5 rounded-2xl bg-yellow-500 hover:bg-yellow-400 text-white font-medium shadow"
+         onClick={() => steFilter("Pending")}
+        >
           Pending
         </button>
       </div>
 
       {/* Task List */}
       <ul className="flex flex-col gap-3 w-full max-w-2xl">
-        {tasks.map((task, i) => (
+        {filtered.map((task, i) => (
           <li
             key={i}
             className="h-14 border rounded-2xl flex items-center justify-between px-4 bg-white shadow-sm hover:shadow-md transition"
