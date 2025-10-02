@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { NotesProvider } from "../Contexts";
 import InputNotes from "./InputNotes";
+import ShowNotes from "./showNotes";
 
 
 
@@ -35,7 +36,7 @@ function Notes() {
        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {Notes.map((note , index) => (
           <div key={index}>
-            <InputNotes note={note}/>
+            <ShowNotes note={note}/>
           </div>
         ))}
        </div>

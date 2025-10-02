@@ -14,6 +14,7 @@ const [value , setValue] = useState("")
         e.preventDefault()
         if(value != ""){
             addNotes({text: value})
+            setValue("")
         }
         else{
             alert("Entre a value!")

@@ -14,7 +14,7 @@ const [NoteText , setNodeText] = useState(note.text)
           >
            <input type="text"
            className="text-gray-800 font-medium"
-           value={NoteText}
+           value={note.text}
            onChange={(e) => setNodeText(e.target.value)}
            />
             <div className="mt-4 flex justify-end">
