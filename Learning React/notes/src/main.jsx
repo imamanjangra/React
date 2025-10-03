@@ -9,6 +9,8 @@
     import About from './Component/About.jsx'
 import InputNotes from './Component/InputNotes.jsx'
 import ShowNotes from './Component/showNotes.jsx'
+import NoteDetails from './Component/NoteDetails.jsx'
+import { NotesProvider } from './Contexts/TodoContext.jsx'
 
     const router = createBrowserRouter(
       createRoutesFromElements(
@@ -17,13 +19,16 @@ import ShowNotes from './Component/showNotes.jsx'
           <Route path='/notes' element={<Notes/>} />
           <Route path='/about' element={<About/>}/>
           <Route path='/create' element={<InputNotes/>}/>
-          <Route path='/allNotes' element={<ShowNotes/>} />
+          <Route path='/allNotes' element={<Notes/>} />
+          <Route path='/notes/:id' element={<NoteDetails/>}/>
         </Route>
       )
     )
 
     createRoot(document.getElementById('root')).render(
       <StrictMode>
+           <NotesProvider>
         <RouterProvider router={router}/>
+        </NotesProvider>
       </StrictMode>,
     )

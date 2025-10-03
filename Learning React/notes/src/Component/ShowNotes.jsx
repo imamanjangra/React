@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNotes } from "../Contexts"
+import { Link } from "react-router-dom"
 
 function ShowNotes({note}) {
 
@@ -11,16 +12,20 @@ const [NoteText , setNodeText] = useState(note.text)
     return(
         <>
        
-       
+      
           <div
            
             className="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300"
           >
+             <Link to={`/notes/${note.id}`}>
+
            <input type="text"
            className="text-gray-800 font-medium"
            value={note.text}
            onChange={(e) => setNodeText(e.target.value)}
            />
+
+            </Link>
             <div className="mt-4 flex justify-end">
               <button
                onClick={() => deleteNotes(note.id)}
@@ -29,6 +34,7 @@ const [NoteText , setNodeText] = useState(note.text)
               </button>
             </div>
           </div>
+         
        
     
         </>

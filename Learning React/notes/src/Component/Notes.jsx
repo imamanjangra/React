@@ -1,6 +1,5 @@
 
-import { useState } from "react";
-import { NotesProvider } from "../Contexts";
+import { NotesProvider, useNotes } from "../Contexts";
 import InputNotes from "./InputNotes";
 import ShowNotes from "./showNotes";
 
@@ -9,18 +8,13 @@ import ShowNotes from "./showNotes";
 function Notes() {
   // Sample notes (static)
  
-  const [Notes , setNotes] = useState([])
+   const { Notes } = useNotes()
 
-  const addNotes = (text) => {
-    setNotes((prev) => [{id: Date.now() , ...text} , ...prev])
-  }
-  const deleteNotes = (id) => {
-    setNotes((prev) => prev.filter((data) => data.id != id))
-  }
-  const EditMode= (id , text) => {}
+  
+ 
 
   return (
-    <NotesProvider value={{Notes , addNotes , deleteNotes , EditMode}}>
+   
     <div className="max-w-4xl mx-auto">
       {/* Page Heading */}
       <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
@@ -44,7 +38,7 @@ function Notes() {
        </div>
       
     </div>
-    </NotesProvider>
+  
   );
 }
 
