@@ -14,7 +14,9 @@ function Notes() {
   const addNotes = (text) => {
     setNotes((prev) => [{id: Date.now() , ...text} , ...prev])
   }
-  const deleteNotes = (id) => {}
+  const deleteNotes = (id) => {
+    setNotes((prev) => prev.filter((data) => data.id != id))
+  }
   const EditMode= (id , text) => {}
 
   return (

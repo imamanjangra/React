@@ -6,14 +6,14 @@ function Home() {
       title: "Add Notes",
       desc: "Create new notes with text and images easily.",
       img: "https://via.placeholder.com/150",
-      link: "/notes",
+      link: "/create",
       color: "bg-blue-100",
     },
     {
       title: "View Notes",
       desc: "View all your saved notes anytime.",
       img: "https://via.placeholder.com/150",
-      link: "/notes",
+      link: "/allNotes",
       color: "bg-green-100",
     },
     {

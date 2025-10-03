@@ -1,8 +1,12 @@
 import { useState } from "react"
+import { useNotes } from "../Contexts"
 
 function ShowNotes({note}) {
 
 const [NoteText , setNodeText] = useState(note.text)
+
+ const {deleteNotes , } = useNotes()
+
 
     return(
         <>
@@ -19,7 +23,7 @@ const [NoteText , setNodeText] = useState(note.text)
            />
             <div className="mt-4 flex justify-end">
               <button
-               
+               onClick={() => deleteNotes(note.id)}
                className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300">
                 Delete
               </button>

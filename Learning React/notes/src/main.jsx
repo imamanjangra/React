@@ -7,6 +7,8 @@
     import Home from './Component/Home.jsx'
     import Notes from './Component/Notes.jsx'
     import About from './Component/About.jsx'
+import InputNotes from './Component/InputNotes.jsx'
+import ShowNotes from './Component/showNotes.jsx'
 
     const router = createBrowserRouter(
       createRoutesFromElements(
@@ -14,6 +16,8 @@
           <Route path='' element={<Home/>}/>
           <Route path='/notes' element={<Notes/>} />
           <Route path='/about' element={<About/>}/>
+          <Route path='/create' element={<InputNotes/>}/>
+          <Route path='/allNotes' element={<ShowNotes/>} />
         </Route>
       )
     )
