@@ -16,9 +16,18 @@ export function NotesProvider({children}){
     const deleteNotes = (id) => {
     setNotes((prev) => prev.filter((data) => data.id != id))
   }
-
+  const EditNotes = (note, id) => {
+  setNotes((prevNotes) =>
+    prevNotes.map((data) => {
+      if (data.id === id) {
+        return { ...data, ...note };
+      }
+      return data;
+    })
+  );
+};
     return (
-  <TodoContex.Provider value={{ Notes, addNotes, deleteNotes }}>
+  <TodoContex.Provider value={{ Notes, addNotes, deleteNotes , EditNotes }}>
       {children}
     </TodoContex.Provider>
   );
