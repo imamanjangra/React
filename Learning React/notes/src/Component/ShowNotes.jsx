@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNotes } from "../Contexts"
 import { Link } from "react-router-dom"
 

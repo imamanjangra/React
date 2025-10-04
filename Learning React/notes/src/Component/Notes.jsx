@@ -1,8 +1,8 @@
 
-import { useEffect } from "react";
+
 import { NotesProvider, useNotes } from "../Contexts";
-import InputNotes from "./InputNotes";
-import ShowNotes from "./showNotes";
+import InputNotes from "./InputNotes.jsx";
+import ShowNotes from "./ShowNotes.jsx"
 
 
 
